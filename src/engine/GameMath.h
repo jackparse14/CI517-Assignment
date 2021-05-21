@@ -16,6 +16,8 @@ inline float toDegrees(float rad) {
 	return rad * _180_OVER_PI;
 }
 
+
+
 struct Vector2f {
 	float x;
 	float y;
@@ -39,7 +41,7 @@ struct Point2 {
 	Point2(int x, int y) : x(x), y(y) {}
 
     Point2& operator+=(const Vector2f& v) {
-        x += v.x;
+        x += v.x;       
         y += v.y;
         return *this;
     }
@@ -136,4 +138,18 @@ inline int getRandom(int min, int max) {
 	return (int)(rand() % (max - min)) + min;
 }
 
+//	Function to make SDL_Rect* = Rect
+inline void SDLrectPtrEqualsRect(SDL_Rect* sdl, Rect rect) {
+	sdl->x = rect.x;
+	sdl->y = rect.y;
+	sdl->w = rect.w;
+	sdl->h = rect.h;
+}
+//	Function to make SDL_Rect* = Rect*
+inline void SDLrectPtrEqualsRectPtr(SDL_Rect* sdl, Rect* rect) {
+	sdl->x = rect->x;
+	sdl->y = rect->y;
+	sdl->w = rect->w;
+	sdl->h = rect->h;
+}
 #endif

@@ -64,10 +64,10 @@ XCube2Engine::XCube2Engine() {
 
 	physicsInstance = std::shared_ptr<PhysicsEngine>(new PhysicsEngine());
 
-    myEngineSystemInstance = std::shared_ptr<MyEngineSystem>(new MyEngineSystem());
+    myAchievementSystemInstance = std::shared_ptr<MyAchievementSystem>(new MyAchievementSystem());
 
 #ifdef __DEBUG
-    debug("MyEngineSystem() successful");
+    debug("MyAchievementSystem() successful");
 #endif
 }
 
